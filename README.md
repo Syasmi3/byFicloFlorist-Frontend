@@ -2,7 +2,7 @@
 
 Repositori Frontend untuk **Website Katalog Digital by.Ficlo Florist dan Dekorasi**, hasil Capstone Project **Asah 2026** (led by Dicoding, supported by GoTo) oleh Tim **A26-CS005**.
 
-🔗 **Live Demo:** `https://<isi-link-vercel-kamu>.vercel.app`
+🔗 **Live Demo:** `https://byficloflorist-frontend.vercel.app/`
 🔗 **Repositori Backend:** `https://github.com/<username>/<nama-repo-backend>`
 
 ---
