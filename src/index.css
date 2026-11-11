@@ -5,14 +5,19 @@
   --color-spring-green: #7C884C;
   --color-ivory: #FFFDF7;
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Libre Baskerville", Georgia, serif;
 }
 
-/* Gradasi tombol Order Now! (hijau tua ke pink) */
+/* Gradasi tombol Order Now! */
 @utility bg-brand-gradient {
   background-image: linear-gradient(to right, #626B45, #A5B565, #E8A5AF, #F8E3E6);
 }
 
-/* Scroll halus saat klik menu */
 html {
   scroll-behavior: smooth;
+}
+
+/* Latar belakang seluruh halaman */
+body {
+  background-color: var(--color-ivory);
 }
