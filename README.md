@@ -9,7 +9,7 @@ Repositori Frontend untuk **Website Katalog Digital by.Ficlo Florist dan Dekoras
 
 ## 📌 1. Latar Belakang
 
-**by.Ficlo** adalah florist dan bouquet di Cimanggis, Depok, yang berdiri sejak 2021. Produknya meliputi bunga artificial dan fresh, buket wisuda, bloom box, vase arrangement, dan hadiah bunga custom.
+**by.Ficlo** adalah florist dan dekorasi di Cimanggis, Depok, yang berdiri sejak 2021. Produknya meliputi bunga artificial dan fresh, buket wisuda, bloom box, vase arrangement, dan hadiah bunga custom.
 
 Saat ini pemesanan masih dilakukan manual lewat chat WhatsApp dan Instagram, sehingga muncul beberapa masalah:
 
