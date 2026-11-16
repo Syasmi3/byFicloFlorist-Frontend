@@ -1,3 +1,4 @@
+
 const images = import.meta.glob('../assets/our-katalog/*.jpg', {
   eager: true,
   import: 'default',
