@@ -2,6 +2,7 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import { Autoplay } from 'swiper/modules'
 import 'swiper/css'
 import FlowerDecor from '../ui/FlowerDecor'
+import pattern3 from '../../assets/pattern3.png'
 import { testimonials } from '../../data/testimonials'
 
 const MIN_SLIDES_FOR_LOOP = 8
@@ -25,7 +26,16 @@ const AUTOPLAY = prefersReducedMotion
       pauseOnMouseEnter: true,
     }
 
-const FLOWERS = []
+const FLOWERS = [
+  { left: '30.7%', top: '-25%', width: 190, rotate: 10 },
+  { left: '71.2%', top: '-25%', width: 190, rotate: 10 },
+  { left: '10.9%', top: '0%', width: 210, rotate: 6 },
+  { left: '54.7%', top: '0%', width: 210, rotate: -10 },
+  { left: '29.1%', top: '51%', width: 160, rotate: 12 },
+  { left: '74.9%', top: '51%', width: 160, rotate: -6 },
+  { left: '9.3%', top: '76%', width: 200, rotate: -8 },
+  { left: '54.4%', top: '76%', width: 200, rotate: 8 },
+].map((flower) => ({ ...flower, src: pattern3, opacity: 0.3 }))
 
 function Avatar({ name, src }) {
   if (src) {
