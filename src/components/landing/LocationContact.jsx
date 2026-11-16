@@ -51,7 +51,7 @@ export default function LocationContact() {
         <div className="relative z-10 px-5 py-12 sm:px-8 lg:px-16 lg:py-16">
           <div className="text-center">
             <h2 className="font-display text-3xl font-bold italic text-white sm:text-4xl lg:text-5xl">
-              Location & Contact by.Ficlo
+              Location & Contact by.ficlo
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-base font-medium text-white sm:text-lg lg:text-xl">
               We’d love to connect with you! Visit our location or send us a

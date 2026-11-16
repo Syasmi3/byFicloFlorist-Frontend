@@ -5,10 +5,11 @@ import OurPromise from '../components/landing/OurPromise'
 import BestSeller from '../components/landing/BestSeller'
 import HowToOrder from '../components/landing/HowToOrder'
 import OurCatalog from '../components/landing/OurCatalog'
-import FAQ from '../components/landing/FAQ'
 import AboutSection from '../components/landing/AboutSection'
+import FAQ from '../components/landing/FAQ'
 import Testimonials from '../components/landing/Testimonials'
 import LocationContact from '../components/landing/LocationContact'
+import Footer from '../components/landing/Footer'
 
 export default function LandingPage() {
   return (
@@ -26,6 +27,7 @@ export default function LandingPage() {
         <Testimonials />
         <LocationContact />
       </main>
+      <Footer />
     </>
   )
 }
