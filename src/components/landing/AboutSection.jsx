@@ -7,11 +7,15 @@ const PARAGRAPHS = [
   'We carefully select fresh, premium flowers and blend them with aesthetic wrapping styles to create custom bouquets tailored to your personality. From vibrant mixed florals to soft coquette palettes, our mission is to deliver not just flowers, but memorable smiles and heartfelt emotions straight to your loved ones.',
 ]
 
+// Pola zig-zag: 2 baris kiri-kanan yang sejajar, 3 bunga di tengah
 const FLOWERS = [
+  // baris atas: kiri dan kanan sejajar
   { left: '10.9%', top: '1%', width: 280, rotate: -8 },
   { left: '71.9%', top: '1%', width: 280, rotate: 10 },
+  // baris bawah: kiri dan kanan sejajar
   { left: '10.9%', top: '61%', width: 280, rotate: -6 },
   { left: '71.9%', top: '61%', width: 280, rotate: 12 },
+  // tengah (3): atas menyembul, di antara dua baris, bawah terpotong
   { left: '40.3%', top: '-21%', width: 280, rotate: 6 },
   { left: '40.3%', top: '31%', width: 280, rotate: -4 },
   { left: '40.3%', top: '87%', width: 280, rotate: 8 },
