@@ -1,3 +1,4 @@
+
 const images = import.meta.glob('../assets/our-katalog/*.jpg', {
   eager: true,
   import: 'default',
@@ -17,37 +18,37 @@ const rawProducts = [
     name: 'Artificial Flowers',
     category: 'Hand Bouquet',
     ingredients: "Mawar Pink, Baby's Breath, Pita Satin Pink",
-    price: 1000000,
+    price: 350000,
   },
   {
     name: 'Bouquet Coklat',
     category: 'Hand Bouquet',
     ingredients: 'Aneka Coklat, Wrapping Merah Hitam, Pita Satin',
-    price: 1000000,
+    price: 350000,
   },
   {
     name: 'Fresh Flowers',
     category: 'Hand Bouquet',
     ingredients: "Gerbera Oranye, Mawar Merah, Baby's Breath",
-    price: 1000000,
+    price: 350000,
   },
   {
     name: 'Money Bouquet Basic',
     category: 'Hand Bouquet',
     ingredients: "Uang Kertas, Baby's Breath, Pita Satin Pink",
-    price: 1000000,
+    price: 350000,
   },
   {
     name: 'Round Artificial Flowers',
     category: 'Hand Bouquet',
     ingredients: "Mawar Pastel, Baby's Breath, Eucalyptus",
-    price: 1000000,
+    price: 350000,
   },
   {
     name: 'Thumbelina Artificial Flowers',
     category: 'Hand Bouquet',
     ingredients: "Bunga Matahari, Mawar Mix Warna, Baby's Breath",
-    price: 1000000,
+    price: 350000,
   },
 ]
 

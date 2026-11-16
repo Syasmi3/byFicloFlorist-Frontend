@@ -5,6 +5,7 @@ import OurPromise from '../components/landing/OurPromise'
 import BestSeller from '../components/landing/BestSeller'
 import HowToOrder from '../components/landing/HowToOrder'
 import OurCatalog from '../components/landing/OurCatalog'
+import FAQ from '../components/landing/FAQ'
 import AboutSection from '../components/landing/AboutSection'
 
 export default function LandingPage() {
@@ -19,6 +20,7 @@ export default function LandingPage() {
         <HowToOrder />
         <OurCatalog />
         <AboutSection />
+        <FAQ />
       </main>
     </>
   )
