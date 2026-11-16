@@ -8,6 +8,7 @@ import OurCatalog from '../components/landing/OurCatalog'
 import FAQ from '../components/landing/FAQ'
 import AboutSection from '../components/landing/AboutSection'
 import Testimonials from '../components/landing/Testimonials'
+import LocationContact from '../components/landing/LocationContact'
 
 export default function LandingPage() {
   return (
@@ -23,6 +24,7 @@ export default function LandingPage() {
         <AboutSection />
         <FAQ />
         <Testimonials />
+        <LocationContact />
       </main>
     </>
   )
