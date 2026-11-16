@@ -5,6 +5,7 @@ import OurPromise from '../components/landing/OurPromise'
 import BestSeller from '../components/landing/BestSeller'
 import HowToOrder from '../components/landing/HowToOrder'
 import OurCatalog from '../components/landing/OurCatalog'
+import AboutSection from '../components/landing/AboutSection'
 
 export default function LandingPage() {
   return (
@@ -17,6 +18,7 @@ export default function LandingPage() {
         <BestSeller />
         <HowToOrder />
         <OurCatalog />
+        <AboutSection />
       </main>
     </>
   )
