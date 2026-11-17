@@ -1,28 +1,35 @@
-import iconPromise from '../../assets/iconpromise.png'
+import hto1 from '../../assets/icon/hto1.png'
+import hto2 from '../../assets/icon/hto2.png'
+import hto3 from '../../assets/icon/hto3.png'
+import hto4 from '../../assets/icon/hto4.png'
 import pattern2 from '../../assets/pattern2.png'
 import FlowerDecor from '../ui/FlowerDecor'
 import InfoCard from '../ui/InfoCard'
 
 const STEPS = [
   {
+    icon: hto1,
     title: 'Choose a Floral Design',
     description:
-      'Select your favorite bouquet from our catalog, or bring your own custom idea.',
+      'Pick your favorite arrangement from our catalog, or customize your own bouquet design.',
   },
   {
-    title: 'Contact Admin via WhatsApp',
+    icon: hto2,
+    title: 'Fill in the Order Form',
     description:
-      'Click the order button to connect directly with our admin in no time.',
+      'Enter the recipients details, delivery schedule (before 2:00 PM WIB for same-day), and greeting card note.',
   },
   {
-    title: 'Fill in the Form & Card Details',
+    icon: hto3,
+    title: 'Pay via BCA Transfer',
     description:
-      'Specify the delivery location, delivery time, and the message to be included on the complimentary greeting card.',
+      'Transfer the exact amount with the unique code to our BCA account and upload your payment proof.',
   },
   {
+    icon: hto4,
     title: 'Flower Delivery',
     description:
-      'Our couriers will deliver your order safely to its destination, right on time.',
+      'Once verified, you will get a digital receipt while we craft and deliver your bouquet on time.',
   },
 ]
 
@@ -60,7 +67,7 @@ export default function HowToOrder() {
           {STEPS.map((step) => (
             <InfoCard
               key={step.title}
-              icon={iconPromise}
+              icon={step.icon}
               title={step.title}
               description={step.description}
             />
