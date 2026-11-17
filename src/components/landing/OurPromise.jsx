@@ -2,6 +2,7 @@ import op1 from '../../assets/icon/op1.png'
 import op2 from '../../assets/icon/op2.png'
 import op3 from '../../assets/icon/op3.png'
 import FlowerDecor from '../ui/FlowerDecor'
+import InfoCard from '../ui/InfoCard'
 
 const FLOWERS = [
   { top: '-6%', left: '2%', width: 300, rotate: -8, opacity: 0.3 },
@@ -52,25 +53,14 @@ export default function OurPromise() {
           </p>
         </div>
 
-        {/* Kartu */}
         <ul className="mt-10 grid gap-6 md:grid-cols-3 lg:mt-14 lg:gap-8">
           {PROMISES.map((item) => (
-            <li
+            <InfoCard
               key={item.title}
-              className="flex flex-col items-center rounded-3xl border border-leaf bg-sage px-6 py-8 text-center"
-            >
-              <img
-                src={item.icon}
-                alt=""
-                className="h-12 w-12 object-contain"
-              />
-              <h3 className="mt-4 font-display text-xl font-bold italic text-neutral-900">
-                {item.title}
-              </h3>
-              <p className="mt-3 max-w-xs text-sm font-medium text-neutral-900">
-                {item.description}
-              </p>
-            </li>
+              icon={item.icon}
+              title={item.title}
+              description={item.description}
+            />
           ))}
         </ul>
       </div>

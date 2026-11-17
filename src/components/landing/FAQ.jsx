@@ -1,6 +1,8 @@
-
 import { useState } from 'react'
 import { FAQ_GROUPS } from '../../data/faqs'
+
+const canHover = () =>
+  window.matchMedia('(hover: hover) and (pointer: fine)').matches
 
 function Chevron({ open }) {
   return (
@@ -24,46 +26,47 @@ function FaqItem({ item, open, onToggle, onHover }) {
   const panelId = `faq-panel-${item.id}`
 
   return (
-    <div
-      onMouseEnter={onHover}
-      className={`rounded-2xl border bg-white transition duration-300 ${
-        open
-          ? 'border-transparent shadow-lg shadow-raspberry/15'
-          : 'border-transparent shadow-sm hover:border-raspberry/40'
-      }`}
-    >
-      <h4>
-        <button
-          type="button"
-          id={buttonId}
-          aria-expanded={open}
-          aria-controls={panelId}
-          onClick={onToggle}
-          className="flex w-full items-center justify-between gap-4 rounded-2xl px-5 py-4 text-left sm:px-6"
-        >
-          <span className="font-display text-base font-bold italic text-raspberry sm:text-lg lg:text-xl">
-            {item.question}
-          </span>
-          <Chevron open={open} />
-        </button>
-      </h4>
-
+    <div className="group" onMouseEnter={onHover}>
       <div
-        id={panelId}
-        role="region"
-        aria-labelledby={buttonId}
-        className={`grid transition-[grid-template-rows] duration-300 ease-out ${
-          open ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'
+        className={`rounded-2xl border bg-white transition duration-300 ease-out group-hover:-translate-y-1 motion-reduce:transition-none motion-reduce:group-hover:translate-y-0 ${
+          open
+            ? 'border-transparent shadow-lg shadow-raspberry/15'
+            : 'border-transparent shadow-sm group-hover:border-raspberry/40 group-hover:shadow-lg group-hover:shadow-raspberry/15'
         }`}
       >
+        <h4>
+          <button
+            type="button"
+            id={buttonId}
+            aria-expanded={open}
+            aria-controls={panelId}
+            onClick={onToggle}
+            className="flex w-full items-center justify-between gap-4 rounded-2xl px-5 py-4 text-left sm:px-6"
+          >
+            <span className="font-display text-base font-bold italic text-raspberry sm:text-lg lg:text-xl">
+              {item.question}
+            </span>
+            <Chevron open={open} />
+          </button>
+        </h4>
+
         <div
-          className={`overflow-hidden transition-[visibility] duration-300 ${
-            open ? 'visible' : 'invisible'
+          id={panelId}
+          role="region"
+          aria-labelledby={buttonId}
+          className={`grid transition-[grid-template-rows] duration-300 ease-out ${
+            open ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'
           }`}
         >
-          <p className="px-5 pb-5 text-sm font-medium text-spring-green sm:px-6 sm:text-base lg:text-lg">
-            {item.answer}
-          </p>
+          <div
+            className={`overflow-hidden transition-[visibility] duration-300 ${
+              open ? 'visible' : 'invisible'
+            }`}
+          >
+            <p className="px-5 pb-5 text-sm font-medium text-spring-green sm:px-6 sm:text-base lg:text-lg">
+              {item.answer}
+            </p>
+          </div>
         </div>
       </div>
     </div>
@@ -73,14 +76,16 @@ function FaqItem({ item, open, onToggle, onHover }) {
 export default function FAQ() {
   const [openId, setOpenId] = useState(null)
 
-  const toggle = (id) => {
+  const handleToggle = (id, event) => {
+    if (canHover() && event.detail > 0) {
+      setOpenId(id)
+      return
+    }
     setOpenId((current) => (current === id ? null : id))
   }
 
   const handleHover = (id) => {
-    if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
-      setOpenId(id)
-    }
+    if (canHover()) setOpenId(id)
   }
 
   return (
@@ -89,7 +94,6 @@ export default function FAQ() {
       className="scroll-mt-24 bg-ivory px-4 py-6 sm:px-6 lg:px-12"
     >
       <div className="mx-auto max-w-[1440px] bg-blush px-5 py-12 sm:px-8 lg:px-12 lg:py-16">
-        {/* Judul */}
         <div className="text-center">
           <h2 className="font-display text-4xl font-bold italic text-raspberry sm:text-5xl">
             Frequently Asked Questions
@@ -100,7 +104,6 @@ export default function FAQ() {
           </p>
         </div>
 
-        {/* Kelompok pertanyaan */}
         <div className="mx-auto mt-8 max-w-4xl space-y-10 lg:mt-12">
           {FAQ_GROUPS.map((group) => (
             <div key={group.title}>
@@ -114,7 +117,7 @@ export default function FAQ() {
                     key={item.id}
                     item={item}
                     open={openId === item.id}
-                    onToggle={() => toggle(item.id)}
+                    onToggle={(event) => handleToggle(item.id, event)}
                     onHover={() => handleHover(item.id)}
                   />
                 ))}

@@ -20,9 +20,9 @@ const prefersReducedMotion =
 const AUTOPLAY = prefersReducedMotion
   ? false
   : {
-      delay: 1000, 
-      disableOnInteraction: false, 
-      pauseOnMouseEnter: true, 
+      delay: 1000,
+      disableOnInteraction: false,
+      pauseOnMouseEnter: true,
     }
 
 export default function BestSeller() {
@@ -42,8 +42,9 @@ export default function BestSeller() {
           </p>
         </div>
 
-        <div className="mt-8 select-none lg:mt-12">
+        <div className="mt-4 select-none lg:mt-8">
           <Swiper
+            className="-mx-3! px-3! pt-4! pb-6!"
             modules={[Autoplay]}
             autoplay={AUTOPLAY}
             loop
