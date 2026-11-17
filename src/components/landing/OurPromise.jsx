@@ -1,4 +1,6 @@
-import iconPromise from '../../assets/iconpromise.png'
+import op1 from '../../assets/icon/op1.png'
+import op2 from '../../assets/icon/op2.png'
+import op3 from '../../assets/icon/op3.png'
 import FlowerDecor from '../ui/FlowerDecor'
 
 const FLOWERS = [
@@ -11,16 +13,19 @@ const FLOWERS = [
 
 const PROMISES = [
   {
+    icon: op1,
     title: 'High-Quality Fresh Flowers',
     description:
       'Each arrangement is crafted using select flowers to ensure their beauty and freshness.',
   },
   {
+    icon: op2,
     title: 'Affordable Flowers',
     description:
       'By.Ficlo can also provide flower arrangements that suit your budget without compromising their special touch and quality.',
   },
   {
+    icon: op3,
     title: 'Same Day Order',
     description:
       'Same-day delivery service to ensure your special moments stay right on schedule.',
@@ -36,7 +41,6 @@ export default function OurPromise() {
       <FlowerDecor items={FLOWERS} />
 
       <div className="relative z-10 mx-auto max-w-[1440px]">
-        {/* Judul */}
         <div className="text-center">
           <h2 className="font-display text-4xl font-bold italic text-raspberry sm:text-5xl">
             Our Promise
@@ -56,7 +60,7 @@ export default function OurPromise() {
               className="flex flex-col items-center rounded-3xl border border-leaf bg-sage px-6 py-8 text-center"
             >
               <img
-                src={iconPromise}
+                src={item.icon}
                 alt=""
                 className="h-12 w-12 object-contain"
               />
