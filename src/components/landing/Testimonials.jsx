@@ -21,7 +21,7 @@ const prefersReducedMotion =
 const AUTOPLAY = prefersReducedMotion
   ? false
   : {
-      delay: 3000, 
+      delay: 3000,
       disableOnInteraction: false,
       pauseOnMouseEnter: true,
     }
@@ -67,23 +67,25 @@ function Avatar({ name, src }) {
 
 function TestimonialCard({ item }) {
   return (
-    <figure className="flex h-full flex-col rounded-[28px] border-2 border-raspberry bg-[#FCEFF3] p-6 sm:p-8">
-      <blockquote className="flex-1 text-base font-medium text-neutral-900 sm:text-lg lg:text-xl">
-        “{item.text}”
-      </blockquote>
+    <div className="group h-full">
+      <figure className="flex h-full flex-col rounded-[28px] border-2 border-raspberry bg-[#FCEFF3] p-6 transition duration-300 ease-out group-hover:-translate-y-2 group-hover:shadow-lg group-hover:shadow-raspberry/20 motion-reduce:transition-none motion-reduce:group-hover:translate-y-0 sm:p-8">
+        <blockquote className="flex-1 text-base font-medium text-neutral-900 sm:text-lg lg:text-xl">
+          “{item.text}”
+        </blockquote>
 
-      <figcaption className="mt-6 flex items-center gap-3 border-t border-neutral-300 pt-5">
-        <Avatar name={item.name} src={item.avatar} />
-        <div>
-          <p className="font-display text-lg font-bold italic leading-tight text-raspberry sm:text-xl lg:text-2xl">
-            {item.name}
-          </p>
-          <p className="mt-1 text-sm font-medium text-spring-green sm:text-base">
-            {item.location} ({item.time})
-          </p>
-        </div>
-      </figcaption>
-    </figure>
+        <figcaption className="mt-6 flex items-center gap-3 border-t border-neutral-300 pt-5">
+          <Avatar name={item.name} src={item.avatar} />
+          <div>
+            <p className="font-display text-lg font-bold italic leading-tight text-raspberry sm:text-xl lg:text-2xl">
+              {item.name}
+            </p>
+            <p className="mt-1 text-sm font-medium text-spring-green sm:text-base">
+              {item.location} ({item.time})
+            </p>
+          </div>
+        </figcaption>
+      </figure>
+    </div>
   )
 }
 
@@ -96,7 +98,6 @@ export default function Testimonials() {
       <FlowerDecor items={FLOWERS} />
 
       <div className="relative z-10 mx-auto max-w-[1440px]">
-        {/* Judul */}
         <div className="text-center">
           <h2 className="font-display text-4xl font-bold italic text-raspberry sm:text-5xl lg:text-6xl">
             Our Customers Speak
@@ -107,8 +108,9 @@ export default function Testimonials() {
           </p>
         </div>
 
-        <div className="mx-auto mt-10 max-w-[1280px] select-none lg:mt-14">
+        <div className="mx-auto mt-6 max-w-[1280px] select-none lg:mt-10">
           <Swiper
+            className="-mx-3! px-3! pt-4! pb-6!"
             modules={[Autoplay]}
             autoplay={AUTOPLAY}
             loop
