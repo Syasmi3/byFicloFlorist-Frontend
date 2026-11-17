@@ -1,3 +1,4 @@
+
 @import "tailwindcss";
 
 @theme {
@@ -9,6 +10,8 @@
   --color-raspberry: #C73A63;
   --color-sage: #EFF2E4;
   --color-leaf: #A5B565;
+  --color-blush: #F7E1E8;
+  --color-moss: #E3E8CD;
 }
 
 @utility bg-brand-gradient {

@@ -38,7 +38,7 @@ export default function Hero() {
           </h1>
 
           <p className="mt-4 font-display text-2xl italic sm:text-3xl lg:text-4xl">
-            FLORIST & BOUQUET DEPOK
+            FLORIST & DEKORASI DEPOK
           </p>
 
           <p className="mt-6 max-w-4xl text-sm font-medium sm:text-base lg:text-xl">
