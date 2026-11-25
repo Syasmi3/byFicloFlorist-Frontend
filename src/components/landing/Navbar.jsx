@@ -1,23 +1,19 @@
 import { useState } from 'react'
 import logo from '../../assets/logo.png'
-import { useLanguage } from '../../context/LanguageContext'
 
 const COPY = {
-  navLabel: { en: 'Main navigation', id: 'Navigasi utama' },
-  openMenu: { en: 'Open menu', id: 'Buka menu' },
-  closeMenu: { en: 'Close menu', id: 'Tutup menu' },
-  orderNow: { en: 'Order Now!', id: 'Pesan Sekarang!' },
+  navLabel: 'Main navigation',
+  openMenu: 'Open menu',
+  closeMenu: 'Close menu',
+  orderNow: 'Order Now!',
 }
 
 const NAV_LINKS = [
-  { label: { en: 'Home', id: 'Beranda' }, href: '#home' },
-  { label: { en: 'Our Catalog', id: 'Katalog' }, href: '#catalog' },
-  { label: { en: 'How To Order', id: 'Cara Pesan' }, href: '#how-to-order' },
-  {
-    label: { en: 'Create Your Bouquet', id: 'Rangkai Buket Sendiri' },
-    href: '#create-bouquet',
-  },
-  { label: { en: 'Contact Us', id: 'Hubungi Kami' }, href: '#contact' },
+  { label: 'Home', href: '#home' },
+  { label: 'Our Catalog', href: '#catalog' },
+  { label: 'How To Order', href: '#how-to-order' },
+  { label: 'Create Your Bouquet', href: '#create-bouquet' },
+  { label: 'Contact Us', href: '#contact' },
 ]
 
 function GlobeIcon() {
@@ -39,8 +35,20 @@ function GlobeIcon() {
   )
 }
 
+function getCurrentLang() {
+  return document.cookie.includes('googtrans=/en/id') ? 'id' : 'en'
+}
+
+function changeLanguage(next) {
+  const select = document.querySelector('.goog-te-combo')
+  if (!select) return false
+  select.value = next
+  select.dispatchEvent(new Event('change'))
+  return true
+}
+
 function LanguageToggle({ className = '', showName = false }) {
-  const { lang, setLang } = useLanguage()
+  const [lang, setLang] = useState(getCurrentLang)
   const isEnglish = lang === 'en'
   const hint = isEnglish
     ? 'Language: English. Click to switch to Indonesian'
@@ -49,7 +57,11 @@ function LanguageToggle({ className = '', showName = false }) {
   return (
     <button
       type="button"
-      onClick={() => setLang(isEnglish ? 'id' : 'en')}
+      translate="no"
+      onClick={() => {
+        const next = isEnglish ? 'id' : 'en'
+        if (changeLanguage(next)) setLang(next)
+      }}
       aria-label={hint}
       title={hint}
       className={`relative items-center gap-3 ${className}`}
@@ -84,7 +96,6 @@ function LanguageToggle({ className = '', showName = false }) {
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
-  const { t } = useLanguage()
 
   const closeMenu = () => setIsOpen(false)
 
@@ -92,7 +103,7 @@ export default function Navbar() {
     <header className="sticky top-0 z-50 bg-ivory shadow-sm">
       <nav
         className="mx-auto flex h-24 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8"
-        aria-label={t(COPY.navLabel)}
+        aria-label={COPY.navLabel}
       >
         <a href="#home" onClick={closeMenu} className="shrink-0">
           <img
@@ -109,7 +120,7 @@ export default function Navbar() {
                 href={link.href}
                 className="text-base font-bold text-spring-green transition-colors hover:text-brand-green"
               >
-                {t(link.label)}
+                {link.label}
               </a>
             </li>
           ))}
@@ -123,14 +134,14 @@ export default function Navbar() {
             onClick={closeMenu}
             className="inline-flex h-10 items-center rounded-xl bg-brand-gradient px-5 text-sm font-bold text-white transition hover:brightness-95 sm:text-base"
           >
-            {t(COPY.orderNow)}
+            {COPY.orderNow}
           </a>
 
           <button
             type="button"
             onClick={() => setIsOpen((prev) => !prev)}
             className="rounded-lg p-2 text-spring-green xl:hidden"
-            aria-label={isOpen ? t(COPY.closeMenu) : t(COPY.openMenu)}
+            aria-label={isOpen ? COPY.closeMenu : COPY.openMenu}
             aria-expanded={isOpen}
             aria-controls="mobile-menu"
           >
@@ -159,7 +170,7 @@ export default function Navbar() {
                 onClick={closeMenu}
                 className="block py-3 text-base font-bold text-spring-green"
               >
-                {t(link.label)}
+                {link.label}
               </a>
             </li>
           ))}

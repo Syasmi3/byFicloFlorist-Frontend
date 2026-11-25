@@ -1,10 +1,8 @@
 import { formatRupiah } from '../../utils/format'
-import { useLanguage } from '../../context/LanguageContext'
 
 export default function ProductCard({ product }) {
-  const { t } = useLanguage()
-  const name = t(product.name)
-  const ingredients = t(product.ingredients)
+  const name = product.name
+  const ingredients = product.ingredients
 
   return (
     <div className="group h-full">

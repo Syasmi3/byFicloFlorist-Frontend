@@ -4,15 +4,11 @@ import 'swiper/css'
 import FlowerDecor from '../ui/FlowerDecor'
 import pattern3 from '../../assets/pattern3.png'
 import { testimonials } from '../../data/testimonials'
-import { useLanguage } from '../../context/LanguageContext'
 import { formatTimeAgo } from '../../utils/format'
 
 const COPY = {
-  title: { en: 'Our Customers Speak', id: 'Kata Pelanggan Kami' },
-  subtitle: {
-    en: 'Heartfelt words and sweet moments shared by those who trust us with their special days.',
-    id: 'Kata-kata tulus dan momen manis dari mereka yang mempercayakan hari spesialnya kepada kami.',
-  },
+  title: 'Our Customers Speak',
+  subtitle: 'Heartfelt words and sweet moments shared by those who trust us with their special days.',
 }
 
 const MIN_SLIDES_FOR_LOOP = 8
@@ -76,13 +72,13 @@ function Avatar({ name, src }) {
 }
 
 function TestimonialCard({ item }) {
-  const { t, lang } = useLanguage()
+  const timeAgo = item.date ? formatTimeAgo(item.date) : item.time
 
   return (
     <div className="group h-full">
       <figure className="flex h-full flex-col rounded-[28px] border-2 border-raspberry bg-[#FCEFF3] p-6 transition duration-300 ease-out group-hover:-translate-y-2 group-hover:shadow-lg group-hover:shadow-raspberry/20 motion-reduce:transition-none motion-reduce:group-hover:translate-y-0 sm:p-8">
         <blockquote className="flex-1 text-base font-medium text-neutral-900 sm:text-lg lg:text-xl">
-          “{t(item.text)}”
+          “{item.text}”
         </blockquote>
 
         <figcaption className="mt-6 flex items-center gap-3 border-t border-neutral-300 pt-5">
@@ -92,7 +88,8 @@ function TestimonialCard({ item }) {
               {item.name}
             </p>
             <p className="mt-1 text-sm font-medium text-spring-green sm:text-base">
-              {item.location} ({formatTimeAgo(item.date, lang)})
+              {item.location}
+              {timeAgo ? ` (${timeAgo})` : ''}
             </p>
           </div>
         </figcaption>
@@ -102,7 +99,6 @@ function TestimonialCard({ item }) {
 }
 
 export default function Testimonials() {
-  const { t } = useLanguage()
 
   return (
     <section
@@ -114,10 +110,10 @@ export default function Testimonials() {
       <div className="relative z-10 mx-auto max-w-[1440px]">
         <div className="text-center">
           <h2 className="font-display text-4xl font-bold italic text-raspberry sm:text-5xl lg:text-6xl">
-            {t(COPY.title)}
+            {COPY.title}
           </h2>
           <p className="mx-auto mt-4 max-w-3xl text-base font-medium text-brand-green sm:text-xl lg:text-2xl">
-            {t(COPY.subtitle)}
+            {COPY.subtitle}
           </p>
         </div>
 

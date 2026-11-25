@@ -1,12 +1,12 @@
 export const formatRupiah = (value) =>
   `Rp ${new Intl.NumberFormat('id-ID').format(value)}`
 
-export function formatTimeAgo(dateInput, lang = 'en') {
+export function formatTimeAgo(dateInput) {
   const date = new Date(dateInput)
   if (Number.isNaN(date.getTime())) return ''
 
   const seconds = Math.round((date.getTime() - Date.now()) / 1000)
-  const rtf = new Intl.RelativeTimeFormat(lang === 'id' ? 'id' : 'en', {
+  const rtf = new Intl.RelativeTimeFormat('en', {
     numeric: 'auto',
   })
 

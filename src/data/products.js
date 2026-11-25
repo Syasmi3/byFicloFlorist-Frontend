@@ -11,19 +11,19 @@ const imageByCode = Object.fromEntries(
 )
 
 const NAME = {
-  roundBouquet: { en: 'Artificial Flowers Round Bouquet', id: 'Buket Bulat Bunga Artifisial' },
-  bouquet: { en: 'Artificial Flowers Bouquet', id: 'Buket Bunga Artifisial' },
-  pinkies: { en: 'Pinkies Thumbelina', id: 'Pinkies Thumbelina' },
-  aurora: { en: 'Aurora Bouquet', id: 'Buket Aurora' },
-  butterfly: { en: 'Butterfly Bouquet', id: 'Buket Kupu-Kupu' },
-  matcha: { en: 'Matcha Strawberry Bouquet', id: 'Buket Matcha Stroberi' },
-  roundThumbelina: { en: 'Round Thumbelina', id: 'Thumbelina Bulat' },
-  round: { en: 'Artificial Flowers Round', id: 'Bunga Artifisial Bulat' },
-  graduation: { en: 'Artificial Flowers Bouquet Graduation', id: 'Buket Bunga Artifisial Wisuda' },
-  fresh: { en: 'Fresh Flowers Bouquet', id: 'Buket Bunga Segar' },
-  chocolate: { en: 'Chocolate Bouquet', id: 'Buket Cokelat' },
-  artificial: { en: 'Artificial Flowers', id: 'Bunga Artifisial' },
-  sunflower: { en: 'Sunflowers Bouquet', id: 'Buket Bunga Matahari' },
+  roundBouquet: 'Artificial Flowers Round Bouquet',
+  bouquet: 'Artificial Flowers Bouquet',
+  pinkies: 'Pinkies Thumbelina',
+  aurora: 'Aurora Bouquet',
+  butterfly: 'Butterfly Bouquet',
+  matcha: 'Matcha Strawberry Bouquet',
+  roundThumbelina: 'Round Thumbelina',
+  round: 'Artificial Flowers Round',
+  graduation: 'Artificial Flowers Bouquet Graduation',
+  fresh: 'Fresh Flowers Bouquet',
+  chocolate: 'Chocolate Bouquet',
+  artificial: 'Artificial Flowers',
+  sunflower: 'Sunflowers Bouquet',
 }
 
 const rawProducts = [

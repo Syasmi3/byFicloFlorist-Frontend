@@ -1,18 +1,13 @@
 import heroImage from '../../assets/heroo.jpg'
-import { useLanguage } from '../../context/LanguageContext'
 
 const COPY = {
-  welcome: { en: 'Welcome To', id: 'Selamat Datang di' },
-  estd: { en: 'Estd.', id: 'Sejak' },
-  description: {
-    en: 'Specializing in artificial & fresh floral arrangements, personalized graduation bouquets, and custom gifting crafted with heart in Depok',
-    id: 'Spesialis rangkaian bunga artifisial & segar, buket wisuda personal, dan hadiah custom yang dibuat sepenuh hati di Depok',
-  },
-  order: { en: 'Order Now', id: 'Pesan Sekarang' },
+  welcome: 'Welcome To',
+  estd: 'Estd.',
+  description: 'Specializing in artificial & fresh floral arrangements, personalized graduation bouquets, and custom gifting crafted with heart in Depok',
+  order: 'Order Now',
 }
 
 export default function Hero() {
-  const { t } = useLanguage()
 
   return (
     <section
@@ -29,12 +24,12 @@ export default function Hero() {
 
         <div className="relative z-10 flex flex-col items-center px-6 py-16 text-center text-white">
           <p className="font-display text-xl italic sm:text-2xl lg:text-3xl">
-            {t(COPY.welcome)}
+            {COPY.welcome}
           </p>
 
           <div className="mt-6 flex items-center gap-6 sm:gap-12 lg:gap-24">
-            <span className="font-display text-xl italic sm:text-2xl lg:text-3xl">
-              {t(COPY.estd)}
+            <span translate="font-display text-xl italic sm:text-2xl lg:text-3xl">
+              {COPY.estd}
             </span>
             <span className="flex h-12 w-12 items-center justify-center rounded-full border border-white font-display text-base italic sm:h-14 sm:w-14 lg:h-[60px] lg:w-[60px] lg:text-xl">
               BF
@@ -44,7 +39,7 @@ export default function Hero() {
             </span>
           </div>
 
-          <h1 className="mt-4 font-display text-6xl font-bold italic sm:text-7xl lg:text-[80px] lg:leading-none">
+          <h1 translate="no" className="mt-4 font-display text-6xl font-bold italic sm:text-7xl lg:text-[80px] lg:leading-none">
             by.ficlo
           </h1>
 
@@ -53,14 +48,14 @@ export default function Hero() {
           </p>
 
           <p className="mt-6 max-w-4xl text-sm font-medium sm:text-base lg:text-xl">
-            {t(COPY.description)}
+            {COPY.description}
           </p>
 
           <a
             href="#catalog"
             className="mt-8 inline-flex h-12 items-center rounded-xl bg-brand-gradient px-10 text-base font-bold text-white transition hover:brightness-95 lg:text-lg"
           >
-            {t(COPY.order)}
+            {COPY.order}
           </a>
         </div>
       </div>
