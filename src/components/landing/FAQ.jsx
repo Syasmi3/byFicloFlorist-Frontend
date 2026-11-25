@@ -1,5 +1,14 @@
 import { useState } from 'react'
 import { FAQ_GROUPS } from '../../data/faqs'
+import { useLanguage } from '../../context/LanguageContext'
+
+const COPY = {
+  title: { en: 'Frequently Asked Questions', id: 'Pertanyaan yang Sering Diajukan' },
+  subtitle: {
+    en: 'Have questions about your flowers or ordering process? Find everything you need to know below.',
+    id: 'Punya pertanyaan seputar bunga atau proses pemesanan? Temukan semua yang perlu Anda ketahui di bawah ini.',
+  },
+}
 
 const canHover = () =>
   window.matchMedia('(hover: hover) and (pointer: fine)').matches
@@ -22,6 +31,7 @@ function Chevron({ open }) {
 }
 
 function FaqItem({ item, open, onToggle, onHover }) {
+  const { t } = useLanguage()
   const buttonId = `faq-button-${item.id}`
   const panelId = `faq-panel-${item.id}`
 
@@ -44,7 +54,7 @@ function FaqItem({ item, open, onToggle, onHover }) {
             className="flex w-full items-center justify-between gap-4 rounded-2xl px-5 py-4 text-left sm:px-6"
           >
             <span className="font-display text-base font-bold italic text-raspberry sm:text-lg lg:text-xl">
-              {item.question}
+              {t(item.question)}
             </span>
             <Chevron open={open} />
           </button>
@@ -64,7 +74,7 @@ function FaqItem({ item, open, onToggle, onHover }) {
             }`}
           >
             <p className="px-5 pb-5 text-sm font-medium text-spring-green sm:px-6 sm:text-base lg:text-lg">
-              {item.answer}
+              {t(item.answer)}
             </p>
           </div>
         </div>
@@ -74,6 +84,7 @@ function FaqItem({ item, open, onToggle, onHover }) {
 }
 
 export default function FAQ() {
+  const { t } = useLanguage()
   const [openId, setOpenId] = useState(null)
 
   const handleToggle = (id, event) => {
@@ -96,19 +107,18 @@ export default function FAQ() {
       <div className="mx-auto max-w-[1440px] bg-blush px-5 py-12 sm:px-8 lg:px-12 lg:py-16">
         <div className="text-center">
           <h2 className="font-display text-4xl font-bold italic text-raspberry sm:text-5xl">
-            Frequently Asked Questions
+            {t(COPY.title)}
           </h2>
           <p className="mx-auto mt-4 max-w-3xl text-base font-medium text-brand-green sm:text-xl lg:text-2xl">
-            Have questions about your flowers or ordering process? Find
-            everything you need to know below.
+            {t(COPY.subtitle)}
           </p>
         </div>
 
         <div className="mx-auto mt-8 max-w-4xl space-y-10 lg:mt-12">
           {FAQ_GROUPS.map((group) => (
-            <div key={group.title}>
+            <div key={group.title.en}>
               <h3 className="text-xl font-bold text-brand-green sm:text-2xl">
-                {group.title}
+                {t(group.title)}
               </h3>
 
               <div className="mt-4 space-y-3 sm:space-y-4">
