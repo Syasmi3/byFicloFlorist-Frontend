@@ -66,4 +66,3 @@ export const bestSellers = rawProducts
     }
     return Boolean(product.image)
   })
-  .sort((a, b) => a.price - b.price)
