@@ -3,6 +3,15 @@ import { Autoplay } from 'swiper/modules'
 import 'swiper/css'
 import ProductCard from '../ui/ProductCard'
 import { bestSellers } from '../../data/products'
+import { useLanguage } from '../../context/LanguageContext'
+
+const COPY = {
+  title: { en: 'Our Best Seller !', id: 'Produk Terlaris Kami!' },
+  subtitle: {
+    en: 'Explore our most beloved floral arrangements, crafted to bring joy and beauty to every celebration.',
+    id: 'Temukan rangkaian bunga favorit kami, dibuat untuk menghadirkan keceriaan dan keindahan di setiap perayaan.',
+  },
+}
 
 const MIN_SLIDES_FOR_LOOP = 8
 const slides =
@@ -26,6 +35,8 @@ const AUTOPLAY = prefersReducedMotion
     }
 
 export default function BestSeller() {
+  const { t } = useLanguage()
+
   return (
     <section
       id="best-seller"
@@ -34,11 +45,10 @@ export default function BestSeller() {
       <div className="mx-auto max-w-[1440px] bg-blush px-5 py-12 sm:px-8 lg:px-12 lg:py-16">
         <div className="text-center">
           <h2 className="font-display text-4xl font-bold italic text-raspberry sm:text-5xl">
-            Our Best Seller !
+            {t(COPY.title)}
           </h2>
           <p className="mx-auto mt-4 max-w-3xl text-base font-medium text-brand-green sm:text-xl lg:text-2xl">
-            Explore our most beloved floral arrangements, crafted to bring joy
-            and beauty to every celebration.
+            {t(COPY.subtitle)}
           </p>
         </div>
 

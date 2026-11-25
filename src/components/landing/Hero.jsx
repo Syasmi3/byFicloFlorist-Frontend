@@ -1,13 +1,25 @@
 import heroImage from '../../assets/heroo.jpg'
+import { useLanguage } from '../../context/LanguageContext'
+
+const COPY = {
+  welcome: { en: 'Welcome To', id: 'Selamat Datang di' },
+  estd: { en: 'Estd.', id: 'Sejak' },
+  description: {
+    en: 'Specializing in artificial & fresh floral arrangements, personalized graduation bouquets, and custom gifting crafted with heart in Depok',
+    id: 'Spesialis rangkaian bunga artifisial & segar, buket wisuda personal, dan hadiah custom yang dibuat sepenuh hati di Depok',
+  },
+  order: { en: 'Order Now', id: 'Pesan Sekarang' },
+}
 
 export default function Hero() {
+  const { t } = useLanguage()
+
   return (
     <section
       id="home"
       className="scroll-mt-24 bg-ivory px-4 pt-4 sm:px-6 lg:px-12"
     >
       <div className="relative mx-auto flex min-h-[560px] max-w-[1440px] items-center justify-center overflow-hidden lg:min-h-[680px]">
-        {/* Foto latar */}
         <img
           src={heroImage}
           alt=""
@@ -15,15 +27,14 @@ export default function Hero() {
         />
         <div className="absolute inset-0 bg-black/30" aria-hidden="true" />
 
-        {/* Konten */}
         <div className="relative z-10 flex flex-col items-center px-6 py-16 text-center text-white">
           <p className="font-display text-xl italic sm:text-2xl lg:text-3xl">
-            Welcome To
+            {t(COPY.welcome)}
           </p>
 
           <div className="mt-6 flex items-center gap-6 sm:gap-12 lg:gap-24">
             <span className="font-display text-xl italic sm:text-2xl lg:text-3xl">
-              Estd.
+              {t(COPY.estd)}
             </span>
             <span className="flex h-12 w-12 items-center justify-center rounded-full border border-white font-display text-base italic sm:h-14 sm:w-14 lg:h-[60px] lg:w-[60px] lg:text-xl">
               BF
@@ -38,19 +49,18 @@ export default function Hero() {
           </h1>
 
           <p className="mt-4 font-display text-2xl italic sm:text-3xl lg:text-4xl">
-            FLORIST & DEKORASI DEPOK
+            FLORIST & BOUQUET DEPOK
           </p>
 
           <p className="mt-6 max-w-4xl text-sm font-medium sm:text-base lg:text-xl">
-            Specializing in artificial & fresh floral arrangements, personalized
-            graduation bouquets, and custom gifting crafted with heart in Depok
+            {t(COPY.description)}
           </p>
 
           <a
             href="#catalog"
             className="mt-8 inline-flex h-12 items-center rounded-xl bg-brand-gradient px-10 text-base font-bold text-white transition hover:brightness-95 lg:text-lg"
           >
-            Order Now
+            {t(COPY.order)}
           </a>
         </div>
       </div>
