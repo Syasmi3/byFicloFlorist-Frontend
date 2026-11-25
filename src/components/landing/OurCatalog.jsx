@@ -1,30 +1,19 @@
 import { useState } from 'react'
 import ProductCard from '../ui/ProductCard'
 import { CATALOG_CATEGORIES, catalogProducts } from '../../data/catalog'
-import { useLanguage } from '../../context/LanguageContext'
 
 const INITIAL_COUNT = 6
 
 const COPY = {
-  title: { en: 'Our Catalog', id: 'Katalog Kami' },
-  subtitle: {
-    en: 'Browse through our full collection of floral bouquets, bloom boxes, and custom floral arrangements.',
-    id: 'Jelajahi koleksi lengkap buket bunga, bloom box, dan rangkaian bunga custom kami.',
-  },
-  filterLabel: {
-    en: 'Filter products by category',
-    id: 'Filter produk berdasarkan kategori',
-  },
-  empty: {
-    en: 'No products in this category yet.',
-    id: 'Belum ada produk di kategori ini.',
-  },
-  showAll: { en: 'All Catalog', id: 'Semua Katalog' },
-  showLess: { en: 'Show Less', id: 'Tampilkan Lebih Sedikit' },
+  title: 'Our Catalog',
+  subtitle: 'Browse through our full collection of floral bouquets, bloom boxes, and custom floral arrangements.',
+  filterLabel: 'Filter products by category',
+  empty: 'No products in this category yet.',
+  showAll: 'All Catalog',
+  showLess: 'Show Less',
 }
 
 export default function OurCatalog() {
-  const { t } = useLanguage()
   const [category, setCategory] = useState('all')
   const [showAll, setShowAll] = useState(false)
 
@@ -48,10 +37,10 @@ export default function OurCatalog() {
       <div className="mx-auto max-w-[1440px] bg-moss px-5 py-12 sm:px-8 lg:px-12 lg:py-16">
         <div className="text-center">
           <h2 className="font-display text-4xl font-bold italic text-raspberry sm:text-5xl">
-            {t(COPY.title)}
+            {COPY.title}
           </h2>
           <p className="mx-auto mt-4 max-w-3xl text-base font-medium text-brand-green sm:text-xl lg:text-2xl">
-            {t(COPY.subtitle)}
+            {COPY.subtitle}
           </p>
         </div>
 
@@ -59,7 +48,7 @@ export default function OurCatalog() {
         <div
           className="mt-6 flex flex-wrap justify-center gap-2 sm:gap-3"
           role="group"
-          aria-label={t(COPY.filterLabel)}
+          aria-label={COPY.filterLabel}
         >
           {CATALOG_CATEGORIES.map((item) => {
             const active = item.key === category
@@ -75,7 +64,7 @@ export default function OurCatalog() {
                     : 'bg-white text-spring-green hover:bg-ivory'
                 }`}
               >
-                {t(item.label)}
+                {item.label}
               </button>
             )
           })}
@@ -91,7 +80,7 @@ export default function OurCatalog() {
           </ul>
         ) : (
           <p className="mt-10 text-center text-base font-medium text-brand-green">
-            {t(COPY.empty)}
+            {COPY.empty}
           </p>
         )}
 
@@ -102,7 +91,7 @@ export default function OurCatalog() {
               onClick={() => setShowAll((prev) => !prev)}
               className="inline-flex h-12 items-center rounded-xl bg-brand-gradient px-10 text-base font-bold text-white transition hover:brightness-95"
             >
-              {showAll ? t(COPY.showLess) : t(COPY.showAll)}
+              {showAll ? COPY.showLess : COPY.showAll}
             </button>
           </div>
         )}

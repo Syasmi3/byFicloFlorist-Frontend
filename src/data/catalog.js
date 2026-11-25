@@ -6,10 +6,10 @@ const images = import.meta.glob('../assets/our-katalog/*.jpg', {
 const imageOf = (fileName) => images[`../assets/our-katalog/${fileName}.jpg`]
 
 export const CATALOG_CATEGORIES = [
-  { key: 'all', label: { en: 'All', id: 'Semua' } },
-  { key: 'hand-bouquet', label: { en: 'Hand Bouquet', id: 'Hand Bouquet' } },
-  { key: 'bloom-box', label: { en: 'Bloom Box', id: 'Bloom Box' } },
-  { key: 'vase-arrangement', label: { en: 'Vase Arrangement', id: 'Rangkaian Vas' } },
+  { key: 'all', label: 'All' },
+  { key: 'hand-bouquet', label: 'Hand Bouquet' },
+  { key: 'bloom-box', label: 'Bloom Box' },
+  { key: 'vase-arrangement', label: 'Vase Arrangement' },
 ]
 
 // DATA SEMENTARA: bahan, kategori, dan harga masih tebakan dari foto.
@@ -17,62 +17,44 @@ export const CATALOG_CATEGORIES = [
 const rawProducts = [
   {
     file: 'Artificial Flowers',
-    name: { en: 'Artificial Flowers', id: 'Bunga Artifisial' },
+    name: 'Artificial Flowers',
     category: 'hand-bouquet',
-    ingredients: {
-      en: "Pink Roses, Baby's Breath, Pink Satin Ribbon",
-      id: "Mawar Pink, Baby's Breath, Pita Satin Pink",
-    },
+    ingredients: "Pink Roses, Baby's Breath, Pink Satin Ribbon",
     price: 350000,
   },
   {
     file: 'Bouquet Coklat',
-    name: { en: 'Chocolate Bouquet', id: 'Buket Cokelat' },
+    name: 'Chocolate Bouquet',
     category: 'hand-bouquet',
-    ingredients: {
-      en: 'Assorted Chocolates, Red & Black Wrapping, Satin Ribbon',
-      id: 'Aneka Cokelat, Wrapping Merah Hitam, Pita Satin',
-    },
+    ingredients: 'Assorted Chocolates, Red & Black Wrapping, Satin Ribbon',
     price: 350000,
   },
   {
     file: 'Fresh Flowers',
-    name: { en: 'Fresh Flowers', id: 'Bunga Segar' },
+    name: 'Fresh Flowers',
     category: 'hand-bouquet',
-    ingredients: {
-      en: "Orange Gerbera, Red Roses, Baby's Breath",
-      id: "Gerbera Oranye, Mawar Merah, Baby's Breath",
-    },
+    ingredients: "Orange Gerbera, Red Roses, Baby's Breath",
     price: 350000,
   },
   {
     file: 'Money Bouquet Basic',
-    name: { en: 'Money Bouquet Basic', id: 'Buket Uang Basic' },
+    name: 'Money Bouquet Basic',
     category: 'hand-bouquet',
-    ingredients: {
-      en: "Paper Money, Baby's Breath, Pink Satin Ribbon",
-      id: "Uang Kertas, Baby's Breath, Pita Satin Pink",
-    },
+    ingredients: "Paper Money, Baby's Breath, Pink Satin Ribbon",
     price: 350000,
   },
   {
     file: 'Round Artificial Flowers',
-    name: { en: 'Round Artificial Flowers', id: 'Bunga Artifisial Bulat' },
+    name: 'Round Artificial Flowers',
     category: 'hand-bouquet',
-    ingredients: {
-      en: "Pastel Roses, Baby's Breath, Eucalyptus",
-      id: "Mawar Pastel, Baby's Breath, Eucalyptus",
-    },
+    ingredients: "Pastel Roses, Baby's Breath, Eucalyptus",
     price: 350000,
   },
   {
     file: 'Thumbelina Artificial Flowers',
-    name: { en: 'Thumbelina Artificial Flowers', id: 'Bunga Artifisial Thumbelina' },
+    name: 'Thumbelina Artificial Flowers',
     category: 'hand-bouquet',
-    ingredients: {
-      en: "Sunflowers, Mixed-Color Roses, Baby's Breath",
-      id: "Bunga Matahari, Mawar Mix Warna, Baby's Breath",
-    },
+    ingredients: "Sunflowers, Mixed-Color Roses, Baby's Breath",
     price: 350000,
   },
 ]

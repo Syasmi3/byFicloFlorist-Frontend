@@ -3,7 +3,6 @@ import op2 from '../../assets/icon/op2.png'
 import op3 from '../../assets/icon/op3.png'
 import FlowerDecor from '../ui/FlowerDecor'
 import InfoCard from '../ui/InfoCard'
-import { useLanguage } from '../../context/LanguageContext'
 
 const FLOWERS = [
   { top: '-6%', left: '2%', width: 300, rotate: -8, opacity: 0.3 },
@@ -14,42 +13,29 @@ const FLOWERS = [
 ]
 
 const COPY = {
-  title: { en: 'Our Promise', id: 'Janji Kami' },
-  subtitle: {
-    en: 'We are committed to delivering fresh blooms, thoughtful craftsmanship, and heartwarming service for your every special moment.',
-    id: 'Kami berkomitmen menghadirkan bunga segar, pengerjaan yang penuh perhatian, dan layanan yang menghangatkan hati untuk setiap momen spesial Anda.',
-  },
+  title: 'Our Promise',
+  subtitle: 'We are committed to delivering fresh blooms, thoughtful craftsmanship, and heartwarming service for your every special moment.',
 }
 
 const PROMISES = [
   {
     icon: op1,
-    title: { en: 'High-Quality Fresh Flowers', id: 'Bunga Segar Berkualitas Tinggi' },
-    description: {
-      en: 'Each arrangement is crafted using select flowers to ensure their beauty and freshness.',
-      id: 'Setiap rangkaian dibuat dari bunga pilihan untuk menjaga keindahan dan kesegarannya.',
-    },
+    title: 'High-Quality Fresh Flowers',
+    description: 'Each arrangement is crafted using select flowers to ensure their beauty and freshness.',
   },
   {
     icon: op2,
-    title: { en: 'Affordable Flowers', id: 'Bunga dengan Harga Terjangkau' },
-    description: {
-      en: 'By.Ficlo can also provide flower arrangements that suit your budget without compromising their special touch and quality.',
-      id: 'By.Ficlo juga menyediakan rangkaian bunga yang sesuai anggaran Anda tanpa mengurangi sentuhan istimewa dan kualitasnya.',
-    },
+    title: 'Affordable Flowers',
+    description: 'By.Ficlo can also provide flower arrangements that suit your budget without compromising their special touch and quality.',
   },
   {
     icon: op3,
-    title: { en: 'Same Day Order', id: 'Pesanan di Hari yang Sama' },
-    description: {
-      en: 'Same-day delivery service to ensure your special moments stay right on schedule.',
-      id: 'Layanan pengiriman di hari yang sama agar momen spesial Anda tetap sesuai jadwal.',
-    },
+    title: 'Same Day Order',
+    description: 'Same-day delivery service to ensure your special moments stay right on schedule.',
   },
 ]
 
 export default function OurPromise() {
-  const { t } = useLanguage()
 
   return (
     <section
@@ -61,20 +47,20 @@ export default function OurPromise() {
       <div className="relative z-10 mx-auto max-w-[1440px]">
         <div className="text-center">
           <h2 className="font-display text-4xl font-bold italic text-raspberry sm:text-5xl">
-            {t(COPY.title)}
+            {COPY.title}
           </h2>
           <p className="mx-auto mt-4 max-w-4xl text-base font-medium text-brand-green sm:text-xl lg:text-2xl">
-            {t(COPY.subtitle)}
+            {COPY.subtitle}
           </p>
         </div>
 
         <ul className="mt-10 grid gap-6 md:grid-cols-3 lg:mt-14 lg:gap-8">
           {PROMISES.map((item) => (
             <InfoCard
-              key={item.title.en}
+              key={item.title}
               icon={item.icon}
-              title={t(item.title)}
-              description={t(item.description)}
+              title={item.title}
+              description={item.description}
             />
           ))}
         </ul>

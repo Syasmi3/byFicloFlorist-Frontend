@@ -43,3 +43,11 @@ body {
     opacity: 0;
   }
 }
+
+.skiptranslate iframe,
+.goog-te-banner-frame {
+  display: none !important;
+}
+body {
+  top: 0 !important;
+}
